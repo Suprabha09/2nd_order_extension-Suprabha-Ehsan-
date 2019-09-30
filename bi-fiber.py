@@ -90,8 +90,8 @@ ds = Measure("ds", subdomain_data=facets)
 bc = [DirichletBC(V.sub(0), Constant(0.), facets, 1),
       DirichletBC(V.sub(1), Constant(0.), facets, 1),
       DirichletBC(V.sub(0), Constant(1.), facets, 2),
-      DirichletBC(V.sub(1), Expression('-0.5*x[0]', degree =2 ), facets, 3),
-      DirichletBC(V.sub(1), Expression('0.5*x[0]', degree =2 ), facets, 4)]
+      DirichletBC(V.sub(1), Expression('-(-0.08*pow(x[0],2)+0.3*x[0])', degree =2 ), facets, 3),
+      DirichletBC(V.sub(1), Expression('-0.08*pow(x[0],2)+0.3*x[0]', degree =2 ), facets, 4)]
 # Define source terms
 q_dx = Constant(0)
 h_dy = Constant(0)
